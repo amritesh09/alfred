@@ -105,11 +105,6 @@
         	background: url('img/back-pattern.jpg') repeat;
         }
 
-        /*.contentSection {
-    		margin-top: -100px;
-    		background: url('img/back-pattern.jpg') repeat;
-        }*/
-
         #btnSampleReport {
 			cursor: pointer;
 		}
@@ -129,9 +124,16 @@
 	        	font-size: 0.4em;
 	        }   
 
-	        .contentSection {
-				margin-top: -50px;
-				background: url('img/back-pattern.jpg') repeat;
+		    #headerCarousal {
+		    	background: url('img/pattern-grid-dark.gif') repeat;
+		    	margin-top: 30px;
+		    }
+
+		    .recoDiv {
+		    	height: 400px;
+		    }
+		    .recoDiv p {
+		    	font-size: 0.8em;
 		    }
         }   
 
@@ -144,11 +146,19 @@
 	        .carousel-caption p {
 	        	font-family: writingText;
 	        	font-weight: 400;
-	        	font-size: 0.8em;
-	        }   
-	        .contentSection {
-				margin-top: -50px;
-				background: url('img/back-pattern.jpg') repeat;
+	        	font-size: 1.0em;
+	        }  
+
+		   	#headerCarousal {
+		    	background: url('img/pattern-grid-dark.gif') repeat;
+		    	margin-top: 30px;
+		    }
+
+		    .recoDiv {
+		    	height: 400px;
+		    }
+		    .recoDiv p {
+		    	font-size: 0.8em;
 		    }
         }
 
@@ -166,7 +176,19 @@
 	        .contentSection {
 				margin-top: -100px;
 				background: url('img/back-pattern.jpg') repeat;
-		    }   
+		    }  
+
+		    #headerCarousal {
+		    	margin-top: -80px;
+		    	background: url('img/pattern-grid-dark.gif') repeat;
+		    } 
+
+		    .recoDiv {
+		    	height: 250px;
+		    }
+		    .recoDiv p {
+		    	font-size: 1em;
+		    }
         }
 
         /*for large screens*/ 
@@ -184,6 +206,18 @@
 				margin-top: -100px;
 				background: url('img/back-pattern.jpg') repeat;
 		    }   
+
+		    #headerCarousal {
+		    	margin-top: -80px;
+		    	background: url('img/pattern-grid-dark.gif') repeat;
+		    }
+
+		    .recoDiv {
+		    	height: 250px;
+		    }
+		    .recoDiv p {
+		    	font-size: 1em;
+		    }
         }
 
         .recoImg {
@@ -410,7 +444,7 @@
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
-					<img src="img/backFinal.jpg">
+					<img src="img/backFinal.jpg" class="headerImg">
 					<div class="carousel-caption">						
 						<h2>
 							Who we are
@@ -422,7 +456,7 @@
 				</div>
 
 				<div class="item">
-					<img src="img/backFinal2.jpg">
+					<img src="img/backFinal2.jpg" class="headerImg">
 					<div class="carousel-caption">						
 						<h2>
 							Mission
@@ -434,7 +468,7 @@
 				</div>
 
 				<div class="item">
-					<img src="img/backFinal3.jpg">
+					<img src="img/backFinal3.jpg" class="headerImg">
 					<div class="carousel-caption">						
 						<h2>
 							Specialities
@@ -536,7 +570,7 @@
                 <li data-target="#recoCarousal" data-slide-to="11" style="background: gray;"></li>
             </ol>
             <div class="carousel-inner" >   <!-- style="height:225px;" -->
-                <div class="item active">
+                <div class="item active recoDiv">
                     <div class="container" style="padding: 2% 2% 2% 2%;">
                         <img src="RecoImages/savil.png" style="max-width:150px; max-height: 170px;" class="recoImg" />
                         <p>
@@ -547,7 +581,7 @@
                         </span>
                     </div>
                 </div>
-                <div class="item">
+                <div class="item recoDiv">
                     <div class="container" style="padding: 2% 2% 2% 2%;">
                         <img src="RecoImages/chirag.png" style="max-width:150px; max-height: 170px;" class="recoImg"/>
                         <p>ERI is a perfect mix of theory & application. I personally have gained a lot from it- from being a student to director, solving challenges that you come across while analyzing a real firm actually enrich the learning experience. Be it recording video lectures on ratio analysis or taking class room lectures on valuation, it has helped me further polish my concepts which I believe played an important role in my success at the Credit Suisse HOLT Valuation Challenge 2012. Highly Recommended!</p>
@@ -556,7 +590,7 @@
                         </span>
                     </div>
                 </div>
-	            <div class="item">
+	            <div class="item recoDiv">
 	                <div class="container" style="padding: 2% 2% 2% 2%;">
 	                    <img src="RecoImages/prateek.png" style="max-width:150px; max-height: 170px;" class="recoImg"/>
 	                    <p>Equity Research Initiative (ERI) provides a good learning platform to someone who intends to pursue his/her career in the domain of Finance. It provides a good exposure to basic concepts of fundamental analysis and valuation through course material and various assignments. Interaction with industry experts is another plus. I pursued ERI as a mentee in my fourth year.</p>
@@ -565,7 +599,7 @@
 	                    </span>
 	                </div>
 	            </div>
-	            <div class="item">
+	            <div class="item recoDiv">
 	                <div class="container" style="padding: 2% 2% 2% 2%;">
 	                    <img src="RecoImages/radha.png" style="max-width:150px; max-height: 170px;" class="recoImg"/>
 	                    <p>Equity research initiative (ERI) uses educational resources and interactions from industry practitioners and offers students a unique opportunity to complete an equity initiation project. I have been associated with ERI as a mentee, mentor and director and it has been an enriching experience. It has been great value addition and given me an opportunity to learn about equity valuation and technical analysis of stocks. I would recommend it for my fellow students interested in the field of finance</p>
@@ -574,7 +608,7 @@
 	                    </span>
 	                </div>
 	            </div>
-	            <div class="item">
+	            <div class="item recoDiv">
 	            <div class="container" style="padding: 2% 2% 2% 2%;">
 	                <img src="RecoImages/aksha.png" style="max-width:150px; max-height: 170px;" class="recoImg"/>
 	                <p>Equity Research Initiative is a great way for connecting students with financial industry professionals. It gave me an exposure to some of the contemporary practices in the industry. It was also a great way for getting good mentoring, giving me a more realistic idea of the career paths and options in the industry. Moreover it also helped build a network wherein I can still reach out to my colleagues and mentors for suggestions and advice. </p>
@@ -583,7 +617,7 @@
 	                </span>
 	            </div>
 		        </div>
-		        <div class="item">
+		        <div class="item recoDiv">
 		            <div class="container" style="padding: 2% 2% 2% 2%;">
 		                <img src="RecoImages/bhawika.png" style="max-width:150px; max-height: 170px;" class="recoImg"/>
 		                <p>Finance being my major, ERI helped me to apply my theoretical knowledge in the practical world.It gave me exposure to the finance fundamentals, stock market, to analyse the movement and study the same in depth. The videos, assignments and chat sessions were very useful. ERI helped me to relate and grasp financial valuation models taught in the college easily and effectively.</p>
@@ -592,7 +626,7 @@
 		                </span>
 		            </div>
 		        </div>
-		        <div class="item">
+		        <div class="item recoDiv">
 		            <div class="container" style="padding: 2% 2% 2% 2%;">
 		                <img src="RecoImages/anirudh.png" style="max-width:150px; max-height: 170px;" class="recoImg"/>
 		                <p>Participating as a student in the second edition of Mentored-Research's equity research initiative was one of the most productive things I'd done while in college. The program gave me as solid a grounding in basic financial analysis as I could have asked for, and I believe I became a more discerning investor as a result.</p>
@@ -603,7 +637,7 @@
 		                </span>
 		            </div>
 		        </div>
-		        <div class="item">
+		        <div class="item recoDiv">
 		            <div class="container" style="padding: 2% 2% 2% 2%;">
 		                <img src="RecoImages/radhev.png" style="max-width:150px; max-height: 170px;" class="recoImg"/>
 		                <p>Its an excellent opportunity for students to get an idea of how their theoretical knowledge can be applied in the assessment and analysis for a company . The course structure is very well designed. This is also a great platform for students to interact with other experienced and learned professionals.</p>
@@ -612,7 +646,7 @@
 		                </span>
 		            </div>
 		        </div>
-		        <div class="item">
+		        <div class="item recoDiv">
 		            <div class="container" style="padding: 2% 2% 2% 2%;">
 		                <img src="RecoImages/aviral.jpg" style="max-width:150px; max-height: 170px;" class="recoImg"/>
 		                <p>I have participated in the program as both a mentor and a student. Mentored-Research's equity research initiative helps those looking forward to a career in finance by building a strong foundation through development of practical understanding of basic financial concepts. I would recommend it to all those who are interested in exploring the field of finance.</p>
@@ -621,7 +655,7 @@
 		                </span>
 		            </div>
 		        </div>
-		        <div class="item">
+		        <div class="item recoDiv">
 		            <div class="container" style="padding: 2% 2% 2% 2%;">
 		                <img src="RecoImages/narasimhan.png" style="max-width:150px; max-height: 170px;" class="recoImg"/>
 		                <p>A brilliant opportunity for anyone who wants to learn equity research. Whether you're a student of engineering or a working professional, this program is bound to teach you how to value a company - right from the basics. Personally, it was one of the best things that ever happened to me; it gave me exposure to the field of finance and helped me realize my interest in the field.</p>
@@ -630,7 +664,7 @@
 		                </span>
 		            </div>
 		        </div>
-		        <div class="item">
+		        <div class="item recoDiv">
 		            <div class="container" style="padding: 2% 2% 2% 2%;">
 		                <img src="RecoImages/akanshya.jpg" style="max-width:150px; max-height: 170px;" class="recoImg"/>
 		                <p>At the very outset, I want to thank the team for not only letting me be a part of this programme, but also letting me express my gratitude for bringing up such an intensive course into our curriculum amidst the not-so-boring college life. A big thank you to the team for the constant support. Rohit, Navendu you have been truly awesome guides. Being a student of Economics and aspiring towards Finance, this course has helped me achieve the required knowledge and skills in leaps and bounds. I would definitely recommend it to anyone aspiring to enter the financial sector.</p>
@@ -639,7 +673,7 @@
 		                </span>
 		            </div>
 		        </div>
-		        <div class="item">
+		        <div class="item recoDiv">
 		            <div class="container" style="padding: 2% 2% 2% 2%;">
 		                <img src="RecoImages/ankit.jpg" style="max-width:150px; max-height: 170px;" class="recoImg"/>
 		                <p>ERI is a basic course to give you practical and outstanding understanding of valuing a company. It has provided me a deep understanding of the world of finance and in particular Equity Research. It's not just a course, but is also a great way to build a rich network with peers and industry professionals.</p>
