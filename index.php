@@ -423,7 +423,7 @@
                     	<a href="http://mentored-research.com/contact">Contact Us</a>
                     </li>
                      <li>
-                    	<a href="http://mentored-research.com/contact" class="hidden-lg hidden-md">Login</a>
+                    	<a href="http://mentored-research.azurewebsites.net/Login2.aspx">Login</a>
                     </li>
                 </ul>
             </div>
