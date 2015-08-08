@@ -508,6 +508,8 @@
 					<br /><br />
 					With committed mentors to guide them through the program, the students are given dedicated support through carefully designed resource material, in sync with common industry practices.Students are also given the opportunity to interact and network with individuals with industry exposure via interactive webinars/chat sessions. 
 					<a href="#" id="btnReadMore">Read More...</a>
+					<br /><br />
+					Applications for the next edition of Equity Research Initiative are now open. For Details on the next edition, <a href="http://mentored-research.com/mail/attachment/attachment.png" target="_blank">Click here</a>.
 				</p>
 			</div>
 
