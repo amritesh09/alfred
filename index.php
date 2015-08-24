@@ -444,7 +444,7 @@
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
-					<img src="img/backFinal.jpg" class="headerImg">
+					<img src="img/backFinal.jpg" class="headerImg col-lg-12">
 					<div class="carousel-caption">						
 						<h2>
 							Who we are
@@ -456,7 +456,7 @@
 				</div>
 
 				<div class="item">
-					<img src="img/backFinal2.jpg" class="headerImg">
+					<img src="img/backFinal2.jpg" class="headerImg col-lg-12">
 					<div class="carousel-caption">						
 						<h2>
 							Mission
@@ -468,7 +468,7 @@
 				</div>
 
 				<div class="item">
-					<img src="img/backFinal3.jpg" class="headerImg">
+					<img src="img/backFinal3.jpg" class="headerImg col-lg-12">
 					<div class="carousel-caption">						
 						<h2>
 							Specialities
@@ -542,6 +542,8 @@
 					<br /><br />
 					Mentored-Research is happy to be collaborating with Mr. Balakrishna Sadekar, Founder, Profitable Candlesticks Charting, LLC. A member of the Technical Securities Analyst Association, the leading authority of Technical Analysis in United States, Balakrishna brings to the fore his real life experience. In course of this program, he will guide the participants through the popular technical trading methods, and their applications through assignments.
 					<a href="#" id="btnTechReadMore">Read More...</a>
+                    <br /><br />
+                    <b>Applications for the Technical Analysis Programme are now closed.</b> Please drop a mail to <code>ta@mentored-research.com</code> for any queries on the next edition.
 				</p>
 			</div>
     	</div>
