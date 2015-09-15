@@ -11,8 +11,8 @@
     <meta name="keywords" content="Mentored Research Equity Research Initiative - the flagship program of Mentored-Research, is a 6 week course designed to help participants in the art of smart and logical investing. This is done by dealing with an application-based approach to analyses of securities. ERI and Technical Analysis by Mentored-Research.">
     <meta name="author" content="Sagar Anand, Mentored-Research Tech Team">
 
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-	<link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
+	<link rel="icon" href="img/logo.png" type="image/x-icon" />
 
     <title>Mentored-Research</title>
 
@@ -35,7 +35,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    
     <!-- for jQuery -->
     <script src="js/jquery-1.7.1.min.js"></script>
 
@@ -54,6 +54,11 @@
     <!-- For validation of the Form input elements -->
     <script src="js/validator.min.js"></script>
 
+    <script type="text/javascript" src="js/jquery.countdown.min.js"></script>
+
+    <script src="js/jquery.lighter.js" type="text/javascript"></script>
+	<link href="css/jquery.lighter.css" rel="stylesheet" type="text/css" />
+   
     <style type="text/css">
 
         @font-face {
@@ -381,13 +386,15 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
+            	
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll scrolly" href="#page-top">Mentored-Research</a>
+                <a class="navbar-brand page-scroll scrolly" href="#page-top">Mentored Research</a>
+                
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -540,11 +547,28 @@
 				<p>
 					The program <b>Technical Analysis</b> is designed to impart skills that will enable students to trade in the stock markets. The students are empowered to forecast future price activity of stocks based on historic market data, price and volume information. Understanding the tools of technical analysis is crucial for a short-term investor, professionally, as a day trader and momentum trader, or personally as well. 
 					<br /><br />
-					Mentored-Research is happy to be collaborating with Mr. Balakrishna Sadekar, Founder, Profitable Candlesticks Charting, LLC. A member of the Technical Securities Analyst Association, the leading authority of Technical Analysis in United States, Balakrishna brings to the fore his real life experience. In course of this program, he will guide the participants through the popular technical trading methods, and their applications through assignments.
+					Mentored-Research is happy to be collaborating with Mr. Balkrishna Sadekar, Founder, Profitable Candlesticks Charting, LLC. A member of the Technical Securities Analyst Association, the leading authority of Technical Analysis in United States, Balkrishna brings to the fore his real life experience. In course of this program, he will guide the participants through the popular technical trading methods, and their applications through assignments.
 					<a href="#" id="btnTechReadMore">Read More...</a>
                     <br /><br />
-                    <b>Applications for the Technical Analysis Programme are now closed.</b> Please drop a mail to <code>ta@mentored-research.com</code> for any queries on the next edition.
+                    <b>Applications are now open for 10th October edition.</b>
+                    <br /><br />
+                    <a href="http://mentored-research.com/payment/" type="button" class="btn btn-warning btn-lg">Enroll Now</a>
+                    <br />
+                    	<b><div id="getting-started" class="text-info"></div></b>
+						<script type="text/javascript">
+						  $('#getting-started').countdown('2015/10/2', function(event) {
+						    $(this).html(event.strftime('Get ₹500 off if you register in %D days %H:%M:%S hrs'));
+						  });
+						</script>
+                    <br /><br />
+                    Mail us at <code>pay@mentored-research.com</code> for details on <b> <kbd> Bank Transfer Payment</kbd></b>.
 				</p>
+			</div>
+
+			<div class="col-lg-4 col-md-4"  style="padding-top: 70px;">
+				<a href="img/tap.png" data-lighter>
+					<img src="img/tap.png" class="img-responsive">
+				</a>
 			</div>
     	</div>
     </section>
