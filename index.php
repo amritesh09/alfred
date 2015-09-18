@@ -537,9 +537,10 @@
 
 			</div>
 		</div>
+		<a name="tap"></a>
     </section>
 
-    <a name="tap"></a>
+
     <section class="contentSection" id="techAnalysisSection">
     	<div class="container">
     		<div class="col-lg-8 col-md-8">
