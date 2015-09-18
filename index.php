@@ -344,7 +344,7 @@
 
             // for opening the Tech Analysis report
             $('#btnTechReadMore').on('click', function() {
-            	window.open("docs/Technical_Analysis.pdf", "_blank");
+            	window.open("docs/TechnicalAnalysis.pdf", "_blank");
             	return false;
             });
 
@@ -516,7 +516,8 @@
 					With committed mentors to guide them through the program, the students are given dedicated support through carefully designed resource material, in sync with common industry practices.Students are also given the opportunity to interact and network with individuals with industry exposure via interactive webinars/chat sessions. 
 					<a href="#" id="btnReadMore">Read More...</a>
 					<br /><br />
-					Applications for the next edition of Equity Research Initiative are now open. For Details on the next edition, <a href="http://mentored-research.com/mail/attachment/attachment.png" target="_blank">Click here</a>.
+					<!-- Applications for the next edition of Equity Research Initiative are now open. For Details on the next edition, <a href="http://mentored-research.com/mail/attachment/attachment.png" target="_blank">Click here</a>. -->
+                    Applications for ERI Fall 2015 Edition are now closed. For more details, please drop us a mail to <code>info@mentored-research.com</code>
 				</p>
 			</div>
 
@@ -550,7 +551,7 @@
 					Mentored-Research is happy to be collaborating with Mr. Balkrishna Sadekar, Founder, Profitable Candlesticks Charting, LLC. A member of the Technical Securities Analyst Association, the leading authority of Technical Analysis in United States, Balkrishna brings to the fore his real life experience. In course of this program, he will guide the participants through the popular technical trading methods, and their applications through assignments.
 					<a href="#" id="btnTechReadMore">Read More...</a>
                     <br /><br />
-                    <b>Applications are now open for 10th October edition.</b>
+                    <b>Applications now open for Fall 2015 Edition, commencing on 10th October, 2015. For full details on next edition, <a href='img/Poster_15_2_Fall.png' target="_blank">Click Here</a></b>
                     <br /><br />
                     <a href="http://mentored-research.com/payment/" type="button" class="btn btn-warning btn-lg">Enroll Now</a>
                     <br />
