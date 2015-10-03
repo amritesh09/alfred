@@ -559,7 +559,7 @@
                     <br />
                     	<b><div id="getting-started" class="text-info"></div></b>
 						<script type="text/javascript">
-						  $('#getting-started').countdown('2015/10/2', function(event) {
+						  $('#getting-started').countdown('2015/10/7', function(event) {
 						    $(this).html(event.strftime('Get ₹500 off if you register in %D days %H:%M:%S hrs'));
 						  });
 						</script>
