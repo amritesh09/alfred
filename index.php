@@ -517,7 +517,42 @@
 					<a href="#" id="btnReadMore">Read More...</a>
 					<br /><br />
 					<!-- Applications for the next edition of Equity Research Initiative are now open. For Details on the next edition, <a href="http://mentored-research.com/mail/attachment/attachment.png" target="_blank">Click here</a>. -->
-                    Applications for ERI Fall 2015 Edition are now closed. For more details, please drop us a mail to <code>info@mentored-research.com</code>
+                    <b>Applications now open for Spring 2016 Edition, commencing on 13th February, 2016.</b>
+                    <br /><br />
+                    <b>See our pricing below:</b>
+                    <br />
+                    <div class="table-responsive">
+                   	<table class="table table-hover table-bordered"data-toggle="table">
+                   		<thead>
+	                   		<tr>
+	                   			<th></th>
+	                   			<th>Before 31/12/2015</th>
+	                   			<th>1/1/2016 to 31/1/2016</th>
+	                   			<th>1/2/2016 to 12/2/2016</th>
+	                   		</tr>
+                   		</thead>
+                   		<tbody>
+                   			<tr>
+                   				<td><b>Individual</b></td>
+                   				<td>₹3200</td>
+                   				<td>₹3500</td>
+                   				<td>₹3750</td>
+                   			</tr>
+                   			<tr>
+                   				<td><b>Team</b></td>
+                   				<td>₹5400</td>
+                   				<td>₹6000</td>
+                   				<td>₹6500</td>
+                   			</tr>
+                   		</tbody>
+                   	</table>
+					</div>
+					<br />
+					<div style="color:#bf0d00">Take advantage of the early bird discount!!</div>
+					<br/>
+                    <a href="http://mentored-research.com/payment/" type="button" class="btn btn-warning btn-lg">Enroll Now</a>	
+                    <br /><br />
+                    Mail us at <code>pay@mentored-research.com</code> for details on <b> <kbd> Bank Transfer Payment</kbd></b>.
 				</p>
 			</div>
 
@@ -553,13 +588,13 @@
 					Mentored-Research is happy to be collaborating with Mr. Balkrishna Sadekar, Founder, Profitable Candlesticks Charting, LLC. A member of the Technical Securities Analyst Association, the leading authority of Technical Analysis in United States, Balkrishna brings to the fore his real life experience. In course of this program, he will guide the participants through the popular technical trading methods, and their applications through assignments.
 					<a href="#" id="btnTechReadMore">Read More...</a>
                     <br /><br />
-                    <b>Applications now open for Fall 2015 Edition, commencing on 10th October, 2015. For full details on next edition, <a href='img/Poster_15_2_Fall.png' target="_blank">Click Here</a></b>
+                    <b>Applications now open for Spring 2016 Edition, commencing on 10th March, 2016. For full details on next edition, <a href='img/Poster_15_2_Fall.png' target="_blank">Click Here</a></b>
                     <br /><br />
                     <a href="http://mentored-research.com/payment/" type="button" class="btn btn-warning btn-lg">Enroll Now</a>
                     <br />
                     	<b><div id="getting-started" class="text-info"></div></b>
 						<script type="text/javascript">
-						  $('#getting-started').countdown('2015/10/7', function(event) {
+						  $('#getting-started').countdown('2016/2/10', function(event) {
 						    $(this).html(event.strftime('Get ₹500 off if you register in %D days %H:%M:%S hrs'));
 						  });
 						</script>
