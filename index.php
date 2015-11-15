@@ -410,14 +410,14 @@
                     	<a href="http://mentored-research.com/MRConnect">M-R Connect</a>
                     </li>
                     <li>
+                     <a href="http://get.mentored-research.com">Verify Certificate</a>
+                   </li>
+                    <li>
                     	<a href="http://mentored-research.com/contact">Contact Us</a>
                     </li>
                      <li>
                     	<a href="http://mentored-research.com/login">Login</a>
-                    </li>
-                    <li>
-                     <a href="http://get.mentored-research.com">Verify Certificate</a>
-                   </li>
+                    </li>                    
                     <li>
                     <!-- <a id="btnMenu" class="hidden-sm hidden-xs" data-toggle="dropdown" aria-expanded="false">Menu</a> -->
                     	<div class="btn-group">
