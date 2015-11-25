@@ -604,8 +604,8 @@
 			</div>
 
 			<div class="col-lg-4 col-md-4"  style="padding-top: 70px;">
-				<a href="img/tap.png" data-lighter>
-					<img src="img/tap.png" class="img-responsive">
+				<a href="img/tap-poster.jpg" data-lighter>
+					<img src="img/tap-poster.jpg" class="img-responsive">
 				</a>
 			</div>
     	</div>
