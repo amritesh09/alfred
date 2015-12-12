@@ -35,7 +35,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
+
     <!-- for jQuery -->
     <script src="js/jquery-1.7.1.min.js"></script>
 
@@ -43,7 +43,7 @@
     <script src="js/customScripts.js"></script>
 
     <!-- for the social buttons coming from Bootstrap -->
-    <link href="css/bootstrap-social.css" rel="stylesheet">    
+    <link href="css/bootstrap-social.css" rel="stylesheet">
 
     <!-- the latest jQuery CDN -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -58,7 +58,7 @@
 
     <script src="js/jquery.lighter.js" type="text/javascript"></script>
 	<link href="css/jquery.lighter.css" rel="stylesheet" type="text/css" />
-   
+
     <style type="text/css">
 
         @font-face {
@@ -88,7 +88,7 @@
 
         #alertMsg {
         	width: 60%;
-            z-index:999999; 
+            z-index:999999;
             margin: 2% 2% 2% 2%;
             font-family: boldText;
             position: fixed;
@@ -96,8 +96,8 @@
 
         #popup {
         	width: 60%;
-            z-index:999999; 
-            margin: 2% 2% 2% 2%;    
+            z-index:999999;
+            margin: 2% 2% 2% 2%;
             font-family: boldText;
             position: fixed;
         }
@@ -114,10 +114,10 @@
 			cursor: pointer;
 		}
 		#btnReadMore {
-			cursor: pointer;	
+			cursor: pointer;
 		}
 
-         /*for the smallest phones*/ 
+         /*for the smallest phones*/
         @media (max-width:767px){
 			.carousel-caption h2 {
 	        	font-family: writingText;
@@ -127,7 +127,7 @@
 	        	font-family: writingText;
 	        	font-weight: 400;
 	        	font-size: 0.4em;
-	        }   
+	        }
 
 		    #headerCarousal {
 		    	background: url('img/pattern-grid-dark.gif') repeat;
@@ -140,7 +140,7 @@
 		    .recoDiv p {
 		    	font-size: 0.8em;
 		    }
-        }   
+        }
 
         /*for the tablets and all*/
         @media (min-width:768px){
@@ -152,7 +152,7 @@
 	        	font-family: writingText;
 	        	font-weight: 400;
 	        	font-size: 1.0em;
-	        }  
+	        }
 
 		   	#headerCarousal {
 		    	background: url('img/pattern-grid-dark.gif') repeat;
@@ -181,12 +181,12 @@
 	        .contentSection {
 				margin-top: -100px;
 				background: url('img/back-pattern.jpg') repeat;
-		    }  
+		    }
 
 		    #headerCarousal {
 		    	margin-top: -80px;
 		    	background: url('img/pattern-grid-dark.gif') repeat;
-		    } 
+		    }
 
 		    .recoDiv {
 		    	height: 250px;
@@ -196,7 +196,7 @@
 		    }
         }
 
-        /*for large screens*/ 
+        /*for large screens*/
         @media (min-width:1200px){
         	 .carousel-caption h2 {
 	        	font-family: writingText;
@@ -210,7 +210,7 @@
 	        .contentSection {
 				margin-top: -100px;
 				background: url('img/back-pattern.jpg') repeat;
-		    }   
+		    }
 
 		    #headerCarousal {
 		    	margin-top: -80px;
@@ -256,18 +256,18 @@
         }
 
         .hiddenMenu {
-			background: url(img/pattern-grid-dark.gif) repeat; 
-			height: auto; 
-			position: fixed; 
+			background: url(img/pattern-grid-dark.gif) repeat;
+			height: auto;
+			position: fixed;
 			z-index: 9;
 		}
 
 		.shownMenu {
-			background: url(img/pattern-grid-dark.gif) repeat; 
-			height: auto; 
-			position: fixed; 
+			background: url(img/pattern-grid-dark.gif) repeat;
+			height: auto;
+			position: fixed;
 			z-index: 9;
-		}			
+		}
 
 		.hiddenMenu>ul {
 			margin: 60% 10% 80% 10%;
@@ -312,11 +312,11 @@
     </style>
 
 	<script type="text/javascript">
-        
+
         $(document).ready(function() {
 
             var alertMsg = $('#alertMsg').fadeOut();
-            var popup = $('#popup').fadeOut();    
+            var popup = $('#popup').fadeOut();
 
             $('#btnExitPopup').on('click', function() {
                 popup.children('p').remove();
@@ -386,7 +386,7 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
-            	
+
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -394,7 +394,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand page-scroll scrolly" href="#page-top">Mentored Research</a>
-                
+
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -404,33 +404,36 @@
                         <a class="scrolly" href="#page-top"></a>
                     </li>
                     <li>
-                    <!-- <a id="btnMenu" class="hidden-sm hidden-xs" data-toggle="dropdown" aria-expanded="false">Menu</a> -->
-                    	<div class="btn-group">
-                			<button type="button" class="btn btn-lg btn-primary dropdown-toggle hidden-sm hidden-xs" data-toggle="dropdown" aria-expanded="false">
-                				Menu   <span class="caret"></span>
-                			</button>
-							<ul class="dropdown-menu dropMenu" role="menu">
-								<li><a class="scrolly" href="#ERISection" style="color: black;">Equity Research Initiative</a></li>
-								<li><a class="scrolly" href="#techAnalysisSection" style="color: black;">Technical Analysis</a></li>
-								<li><a class="scrolly" href="#sayingSection" style="color: black;">Our Collaborations</a></li>
-								<li><a class="scrolly" href="#networkSection" style="color: black;">Our Network</a></li>
-								<li class="divider"></li>
-								<li><a href="http://mentored-research.com/contact" style="color: black;" class="dropMenuLink">Contact Us</a></li>
-								<li><a href="http://mentored-research.com/contact" style="color: black;" class="dropMenuLink">Be a Campus Ambassador</a></li>
-							</ul>
-                    	</div>
-                    </li>
-                    <li>
                     	<a href="http://mentored-research.com/Compendium">Compendium</a>
                     </li>
                     <li>
                     	<a href="http://mentored-research.com/MRConnect">M-R Connect</a>
                     </li>
                     <li>
+                     <a href="http://get.mentored-research.com">Verify Certificate</a>
+                   </li>
+                    <li>
                     	<a href="http://mentored-research.com/contact">Contact Us</a>
                     </li>
                      <li>
                     	<a href="http://mentored-research.com/login">Login</a>
+                    </li>                    
+                    <li>
+                    <!-- <a id="btnMenu" class="hidden-sm hidden-xs" data-toggle="dropdown" aria-expanded="false">Menu</a> -->
+                    	<div class="btn-group">
+                			<button type="button" class="btn btn-lg btn-primary dropdown-toggle hidden-sm hidden-xs" data-toggle="dropdown" aria-expanded="false">
+                				Menu   <span class="caret"></span>
+                			</button>
+            							<ul class="dropdown-menu dropMenu" role="menu">
+            								<li><a class="scrolly" href="#ERISection" style="color: black;">Equity Research Initiative</a></li>
+            								<li><a class="scrolly" href="#techAnalysisSection" style="color: black;">Technical Analysis</a></li>
+            								<li><a class="scrolly" href="#sayingSection" style="color: black;">Our Collaborations</a></li>
+            								<li><a class="scrolly" href="#networkSection" style="color: black;">Our Network</a></li>
+            								<li class="divider"></li>
+            								<li><a href="http://mentored-research.com/contact" style="color: black;" class="dropMenuLink">Contact Us</a></li>
+            								<li><a href="http://mentored-research.com/contact" style="color: black;" class="dropMenuLink">Be a Campus Ambassador</a></li>
+            							</ul>
+                    	</div>
                     </li>
                 </ul>
             </div>
@@ -452,19 +455,19 @@
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
 					<img src="img/backFinal.jpg" class="headerImg col-lg-12">
-					<div class="carousel-caption">						
+					<div class="carousel-caption">
 						<h2>
 							Who we are
 						</h2>
 						<p>
-							An organization run by alumni of BITS Pilani University, working to increase access to educational resources to determined students aspiring to explore the world of Finance. 
+							An organization run by alumni of BITS Pilani University, working to increase access to educational resources to determined students aspiring to explore the world of Finance.
 						</p>
 					</div>
 				</div>
 
 				<div class="item">
 					<img src="img/backFinal2.jpg" class="headerImg col-lg-12">
-					<div class="carousel-caption">						
+					<div class="carousel-caption">
 						<h2>
 							Mission
 						</h2>
@@ -476,12 +479,12 @@
 
 				<div class="item">
 					<img src="img/backFinal3.jpg" class="headerImg col-lg-12">
-					<div class="carousel-caption">						
+					<div class="carousel-caption">
 						<h2>
 							Specialities
 						</h2>
 						<p>
-							Technical Analysis, Fundamental Analysis, Financial Modeling using MS-Excel, Valuation Techniques, Equity Research, Research Report writing, Interactive sessions with experienced industry experts. 
+							Technical Analysis, Fundamental Analysis, Financial Modeling using MS-Excel, Valuation Techniques, Equity Research, Research Report writing, Interactive sessions with experienced industry experts.
 						</p>
 					</div>
 				</div>
@@ -507,13 +510,13 @@
 					Equity Research Initiative
 				</h2>
 				<p>
-					Equity Research Initiative, the flagship program of Mentored-Research, is a 6 week course designed to help participants in the art of smart and logical investing. This is done by dealing with an application-based approach to analyses of securities. 
+					Equity Research Initiative, the flagship program of Mentored-Research, is a 6 week course designed to help participants in the art of smart and logical investing. This is done by dealing with an application-based approach to analyses of securities.
 					<br /><br />
-					In operations since 2010, 350+ students from BITS Pilani University, Indian Institute of Technology, Delhi, and other colleges of repute have been a part of this program. 
+					In operations since 2010, 350+ students from BITS Pilani University, Indian Institute of Technology, Delhi, and other colleges of repute have been a part of this program.
 					<br /><br />
-					Students are taught how to analyze businesses and their respective sectors, screen for comparable companies, read financial statements, use ratio analysis techniques, and construct valuation models. 
+					Students are taught how to analyze businesses and their respective sectors, screen for comparable companies, read financial statements, use ratio analysis techniques, and construct valuation models.
 					<br /><br />
-					With committed mentors to guide them through the program, the students are given dedicated support through carefully designed resource material, in sync with common industry practices.Students are also given the opportunity to interact and network with individuals with industry exposure via interactive webinars/chat sessions. 
+					With committed mentors to guide them through the program, the students are given dedicated support through carefully designed resource material, in sync with common industry practices.Students are also given the opportunity to interact and network with individuals with industry exposure via interactive webinars/chat sessions.
 					<a href="#" id="btnReadMore">Read More...</a>
 					<br /><br />
 					<!-- Applications for the next edition of Equity Research Initiative are now open. For Details on the next edition, <a href="http://mentored-research.com/mail/attachment/attachment.png" target="_blank">Click here</a>. -->
@@ -550,7 +553,7 @@
 					<br />
 					<div style="color:#bf0d00">Take advantage of the early bird discount!!</div>
 					<br/>
-                    <a href="http://mentored-research.com/payment/" type="button" class="btn btn-warning btn-lg">Enroll Now</a>	
+                    <a href="http://mentored-research.com/payment/" type="button" class="btn btn-warning btn-lg">Enroll Now</a>
                     <br /><br />
                     Mail us at <code>pay@mentored-research.com</code> for details on <b> <kbd> Bank Transfer Payment</kbd></b>.
 				</p>
@@ -583,7 +586,7 @@
 					Technical Analysis
 				</h2>
 				<p>
-					The program <b>Technical Analysis</b> is designed to impart skills that will enable students to trade in the stock markets. The students are empowered to forecast future price activity of stocks based on historic market data, price and volume information. Understanding the tools of technical analysis is crucial for a short-term investor, professionally, as a day trader and momentum trader, or personally as well. 
+					The program <b>Technical Analysis</b> is designed to impart skills that will enable students to trade in the stock markets. The students are empowered to forecast future price activity of stocks based on historic market data, price and volume information. Understanding the tools of technical analysis is crucial for a short-term investor, professionally, as a day trader and momentum trader, or personally as well.
 					<br /><br />
 					Mentored-Research is happy to be collaborating with Mr. Balkrishna Sadekar, Founder, Profitable Candlesticks Charting, LLC. A member of the Technical Securities Analyst Association, the leading authority of Technical Analysis in United States, Balkrishna brings to the fore his real life experience. In course of this program, he will guide the participants through the popular technical trading methods, and their applications through assignments.
 					<a href="#" id="btnTechReadMore">Read More...</a>
@@ -614,7 +617,7 @@
     <section class="contentSection" id="sayingSection">
     	<div class="container">
 			<h2>
-				What people are saying about us?	    	
+				What people are saying about us?
 		    </h2>
     	</div>
 
@@ -698,7 +701,7 @@
 		                <p>Participating as a student in the second edition of Mentored-Research's equity research initiative was one of the most productive things I'd done while in college. The program gave me as solid a grounding in basic financial analysis as I could have asked for, and I believe I became a more discerning investor as a result.</p>
 		                <span>
 		                    <b>
-		                        Anirudh Nimmagadda, Analyst at Probe Equity         
+		                        Anirudh Nimmagadda, Analyst at Probe Equity
 		                    </b>
 		                </span>
 		            </div>
@@ -815,7 +818,7 @@
                 //alert($('#btn1').attr('src').toString());
                 pos = list.position();
                 if (pos.left == 0) {
-                    
+
                 }
                 else {
                     list.animate({
@@ -927,7 +930,7 @@
                     <span class="copyright">Copyright &copy; Mentored-Research 2015</span>
                 </div>
                 <div class="col-md-4">
-                    
+
                 </div>
                 <div class="col-md-4">   <!-- TODO -->
                     <ul class="list-inline social-buttons">
@@ -945,8 +948,8 @@
     <script src="js/bootstrap.min.js"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script> 
-    <script src="js/classie.js"></script> 
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
     <script src="js/cbpAnimatedHeader.js"></script>
 
     <!-- Contact Form JavaScript -->
