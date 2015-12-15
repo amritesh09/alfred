@@ -499,11 +499,12 @@
 				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 				<span class="sr-only">Next</span>
 			</a>
-
+            <a name="eri"></a>
 		</div>   <!-- end of carousal -->
     </section>
 
     <section id="ERISection" class="contentSection">
+
 		<div class="container">
 			<div class="col-lg-8 col-md-8" id="ERIContent">
 				<h2>
