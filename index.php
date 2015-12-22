@@ -332,8 +332,14 @@
 
     		// for the read more link
     		$('#btnReadMore').on('click', function() {
-            	window.open("docs/MRERI.pdf", "_blank");
+            	window.open("docs/ERI_Infosheet.pdf", "_blank");
             	return false;
+            });
+
+            //For the FAQ link
+            $('#btnFAQ').on('click', function() {
+                window.open("docs/FAQs.pdf", "_blank");
+                return false;
             });
 
             //for opening the sample report.
