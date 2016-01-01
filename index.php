@@ -526,7 +526,6 @@
                    		<thead>
 	                   		<tr>
 	                   			<th></th>
-	                   			<th>Before 31/12/2015</th>
 	                   			<th>1/1/2016 to 31/1/2016</th>
 	                   			<th>1/2/2016 to 12/2/2016</th>
 	                   		</tr>
@@ -534,13 +533,11 @@
                    		<tbody>
                    			<tr>
                    				<td><b>Individual</b></td>
-                   				<td>₹3200</td>
                    				<td>₹3500</td>
                    				<td>₹3750</td>
                    			</tr>
                    			<tr>
                    				<td><b>Team</b></td>
-                   				<td>₹5400</td>
                    				<td>₹6000</td>
                    				<td>₹6500</td>
                    			</tr>
