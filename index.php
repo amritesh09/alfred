@@ -332,7 +332,7 @@
 
     		// for the read more link
     		$('#btnReadMore').on('click', function() {
-            	window.open("docs/ERI_Infosheet.pdf", "_blank");
+            	window.open("docs/ERI_Info.pdf", "_blank");
             	return false;
             });
 
@@ -592,7 +592,7 @@
 					Mentored-Research is happy to be collaborating with Mr. Balkrishna Sadekar, Founder, Profitable Candlesticks Charting, LLC. A member of the Technical Securities Analyst Association, the leading authority of Technical Analysis in United States, Balkrishna brings to the fore his real life experience. In course of this program, he will guide the participants through the popular technical trading methods, and their applications through assignments.
 					<a href="#" id="btnTechReadMore">Read More...</a>
                     <br /><br />
-                    <b>Applications now open for Spring 2016 Edition, commencing on 10th March, 2016. For full details on next edition, <a href='img/Poster_15_2_Fall.png' target="_blank">Click Here</a></b>
+                    <b>Applications now open for Spring 2016 Edition, commencing on 10th March, 2016. For full details on next edition, <a href='img/tap-poster.jpg' target="_blank">Click Here</a></b>
                     <br /><br />
                     <a href="http://mentored-research.com/payment/" type="button" class="btn btn-warning btn-lg">Enroll Now</a>
                     <br />
