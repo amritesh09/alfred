@@ -410,9 +410,6 @@
                         <a class="scrolly" href="#page-top"></a>
                     </li>
                     <li>
-                    	<a href="http://mentored-research.com/Compendium">Compendium</a>
-                    </li>
-                    <li>
                     	<a href="http://mentored-research.com/MRConnect">M-R Connect</a>
                     </li>
                     <li>
