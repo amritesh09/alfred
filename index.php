@@ -516,7 +516,7 @@
 				<p>
 					Equity Research Initiative, the flagship program of Mentored-Research, is a 6 week course designed to help participants in the art of smart and logical investing. This is done by dealing with an application-based approach to analyses of securities.
 					<br /><br />
-					In operations since 2010, 350+ students from BITS Pilani University, Indian Institute of Technology, Delhi, and other colleges of repute have been a part of this program.
+					In operations since 2010, students from BITS Pilani University, Indian Institute of Technology, Delhi and other colleges of repute have been a part of this program.
 					<br /><br />
 					Students are taught how to analyze businesses and their respective sectors, screen for comparable companies, read financial statements, use ratio analysis techniques, and construct valuation models.
 					<br /><br />
@@ -533,20 +533,17 @@
                    		<thead>
 	                   		<tr>
 	                   			<th></th>
-	                   			<th>1/1/2016 to 31/1/2016</th>
-	                   			<th>1/2/2016 to 12/2/2016</th>
+	                   			<th>1/2/2016 onwards</th>
 	                   		</tr>
                    		</thead>
                    		<tbody>
                    			<tr>
                    				<td><b>Individual</b></td>
                    				<td>₹3500</td>
-                   				<td>₹3750</td>
                    			</tr>
                    			<tr>
                    				<td><b>Team</b></td>
                    				<td>₹6000</td>
-                   				<td>₹6500</td>
                    			</tr>
                    		</tbody>
                    	</table>
