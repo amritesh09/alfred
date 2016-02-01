@@ -589,15 +589,15 @@
 					Mentored-Research is happy to be collaborating with Mr. Balkrishna Sadekar, Founder, Profitable Candlesticks Charting, LLC. A member of the Technical Securities Analyst Association, the leading authority of Technical Analysis in United States, Balkrishna brings to the fore his real life experience. In course of this program, he will guide the participants through the popular technical trading methods, and their applications through assignments.
 					<a href="#" id="btnTechReadMore">Read More...</a>
                     <br /><br />
-                    <b>Applications now open for Spring 2016 Edition, commencing on 10th March, 2016. For full details on next edition, <a href='img/tap-poster.jpg' target="_blank">Click Here</a></b>
+                    <b>Applications now open for Spring 2016 Edition, commencing on 10th March, 2016. For full details on next edition, <a href='img/tap-poster-1.jpg' target="_blank">Click Here</a></b>
                     <br /><br />
                     <a href="http://mentored-research.com/payment/" type="button" class="btn btn-warning btn-lg">Enroll Now</a>
                     <br />
                     	<b><div id="getting-started" class="text-info"></div></b>
 						<script type="text/javascript">
-						  $('#getting-started').countdown('2016/2/10', function(event) {
-						    $(this).html(event.strftime('Get ₹500 off if you register in %D days %H:%M:%S hrs'));
-						  });
+                            $('#getting-started').countdown('2016/2/25', function(event) {
+                                $(this).html(event.strftime('Get ₹500 off if you register in %D days %H:%M:%S hrs'));
+                            });
 						</script>
                     <br /><br />
                     Mail us at <code>pay@mentored-research.com</code> for details on <b> <kbd> Bank Transfer Payment</kbd></b>.
@@ -605,8 +605,8 @@
 			</div>
 
 			<div class="col-lg-4 col-md-4"  style="padding-top: 70px;">
-				<a href="img/tap-poster.jpg" data-lighter>
-					<img src="img/tap-poster.jpg" class="img-responsive">
+				<a href="img/tap-poster-1.jpg" data-lighter>
+					<img src="img/tap-poster-1.jpg" class="img-responsive">
 				</a>
 			</div>
     	</div>
