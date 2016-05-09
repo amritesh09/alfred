@@ -1,0 +1,192 @@
+<html>
+<head>
+	<title>Checkout page</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link href="css/navbar.css" rel="stylesheet" >
+<script type="text/javascript" language="javascript" src="json/recepies.json"></script>
+
+	<link href="css/own2.css" rel="stylesheet" >
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+	<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Alfred</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">About Us</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-8">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<div class="panel-title">
+						<div class="row">
+							<div class="col-xs-6">
+								<h5><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</h5>
+							</div>
+							<div class="col-xs-6">
+								<button type="button" class="btn btn-primary btn-sm btn-block">
+									<span class="glyphicon glyphicon-share-alt"></span> Continue shopping
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="shoppingCartArea" class="panel-body">
+					<div class="row">
+						<div class="text-center">
+							<div class="col-xs-9">
+								<h6 class="text-right">Added items?</h6>
+							</div>
+							<div class="col-xs-3">
+								<button type="button" class="btn btn-default btn-sm btn-block">
+									Update cart
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel-footer">
+					<div class="row text-center">
+						<div class="col-xs-9">
+							<h4 class="text-right">Total <strong>$50.00</strong></h4>
+						</div>
+						<div class="col-xs-3">
+							<button type="button" class="btn btn-success btn-block">
+								Checkout
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Plans -->
+<section id="plans">
+		<div class="container">
+				<div class="row">
+
+						<!-- item -->
+						<div class="col-md-3 text-center">
+								<div class="panel panel-danger panel-pricing">
+										<div class="panel-heading">
+											<img src="img1.jpg" class="headerImages" />
+
+												<h3>Two People plan</h3>
+										</div>
+										<div class="panel-body text-center">
+												<p><strong>$150 / Month</strong></p>
+										</div>
+										<ul class="list-group text-center">
+												<li class="list-group-item"><i class="fa fa-check"></i> Ensures Healthy Balanced Diet</li>
+												<li class="list-group-item"><i class="fa fa-check"></i> Includes: Vegetabls and Fruits</li>
+												<li class="list-group-item"><i class="fa fa-check"></i> 5 cheat days</li>
+												<li class="list-group-item"><i class="fa fa-times"></i> Pre-cut vegetabls</li>
+										</ul>
+										<div class="panel-footer">
+												<a class="btn btn-lg btn-block btn-danger" href="#">BUY NOW!</a>
+										</div>
+								</div>
+						</div>
+						<!-- /item -->
+
+						<!-- item -->
+						<div class="col-md-3 text-center">
+								<div class="panel panel-warning panel-pricing">
+										<div class="panel-heading">
+											<img src="family4.jpeg" class="headerImages" />
+												<h3>Three People plan</h3>
+										</div>
+										<div class="panel-body text-center">
+												<p><strong>$200 / Month</strong></p>
+										</div>
+										<ul class="list-group text-center">
+												<li class="list-group-item"><i class="fa fa-check"></i> Ensures Healthy Balanced Diet</li>
+												<li class="list-group-item"><i class="fa fa-check"></i> Includes: Vegetabls, Fruits and meat</li>
+												<li class="list-group-item"><i class="fa fa-check"></i> 6 cheat days</li>
+												<li class="list-group-item"><i class="fa fa-check"></i> Pre-cut vegetables</li>
+										</ul>
+										<div class="panel-footer">
+												<a class="btn btn-lg btn-block btn-warning" href="#">BUY NOW!</a>
+										</div>
+								</div>
+						</div>
+						<!-- /item -->
+
+						<!-- item -->
+						<div class="col-md-3 text-center">
+								<div class="panel panel-success panel-pricing">
+										<div class="panel-heading">
+											<img src="family2.jpg" class="headerImages" />
+												<h3>Four People Plan</h3>
+										</div>
+										<div class="panel-body text-center">
+												<p><strong>$250 / Month</strong></p>
+										</div>
+										<ul class="list-group text-center">
+												<li class="list-group-item"><i class="fa fa-check"></i> Ensures Healthy Balanced Diet</li>
+												<li class="list-group-item"><i class="fa fa-check"></i> Includes: Vegetabls, Fruits and Meat</li>
+												<li class="list-group-item"><i class="fa fa-check"></i> 6 cheat days</li>
+												<li class="list-group-item"><i class="fa fa-check"></i> Pre-cut vegetables</li>
+										</ul>
+										<div class="panel-footer">
+												<a class="btn btn-lg btn-block btn-success" href="#">BUY NOW!</a>
+										</div>
+								</div>
+						</div>
+						<!-- /item -->
+						<!-- item -->
+						<div class="col-md-3 text-center">
+								<div class="panel panel-success panel-pricing">
+										<div class="panel-heading">
+											<img src="family2.jpg" class="headerImages" />
+												<h3>Customized Meal Plan</h3>
+										</div>
+										<div class="panel-body text-center">
+												<p><strong>$80 / Month</strong></p>
+										</div>
+										<ul class="list-group text-center">
+												<li class="list-group-item"><i class="fa fa-check"></i> Ensures Healthy Balanced Diet</li>
+												<li class="list-group-item"><i class="fa fa-check"></i> Includes: Vegetabls, Fruits and Meat</li>
+												<li class="list-group-item"><i class="fa fa-check"></i> 6 cheat days</li>
+												<li class="list-group-item"><i class="fa fa-check"></i> Pre-cut vegetables</li>
+										</ul>
+										<div class="panel-footer">
+												<a class="btn btn-lg btn-block btn-success" href="#">BUY NOW!</a>
+										</div>
+								</div>
+						</div>
+						<!-- /item -->
+
+				</div>
+		</div>
+</section>
+<!-- /Plans -->
+<script type="text/javascript">
+ var $scart = $("#shoppingCartArea");
+ // localStorage.setItem("recipesSelected", "1,2");
+	var selectedRecipes = localStorage.getItem("recepiesSelected").split(",");
+	console.log(selectedRecipes);
+	for(var i=0;i<selectedRecipes.length;i++){
+		console.log(selectedRecipes[i]);
+		var curObject = jsonObject.recipes[selectedRecipes[i]];
+		console.log(curObject);
+		var $row = "<div class=\"row\">    <div class=\"col-xs-2\"><img class=\"img-responsive\" src=\""+ curObject.image_url+"\">    </div>    <div class=\"col-xs-4\">      <h4 class=\"product-name\"><strong>"+ curObject.title + " Meal Box</strong></h4><h4><small>"+curObject.description+"</small></h4>    </div>    <div class=\"col-xs-6\">      <div class=\"col-xs-6 text-right\">        <h6><strong>25.00 <span class=\"text-muted\">x</span></strong></h6>      </div>      <div class=\"col-xs-4\">        <input type=\"text\" class=\"form-control input-sm\" value=\"1\">      </div>      <div class=\"col-xs-2\">        <button type=\"button\" class=\"btn btn-link btn-xs\">          <span class=\"glyphicon glyphicon-trash\"> </span>        </button>      </div>    </div>  </div>  <hr>"
+		console.log($row);
+		$scart.prepend($row);
+	}
+</script>
+</body>
+</html>

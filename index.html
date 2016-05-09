@@ -1,0 +1,749 @@
+<html>
+<head>
+  <title>Alfred</title>
+  <!-- Bootstrap Core JavaScript -->
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="http://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script type="text/javascript" src="http://www.amcharts.com/lib/3/pie.js"></script>
+  <script type="text/javascript" language="javascript" src="json/recepies.json"></script>
+  <script type="text/javascript" language="javascript" src="json/nutrition.json"></script> 
+  <script type="text/javascript" src="js/jquery-live-preview.js"></script>
+<link href="css/livepreview-demo.css" rel="stylesheet" type="text/css">
+<link href="css/own.css" rel="stylesheet" >
+
+
+  <!-- <script type="text/javascript" src="index2.js"></script>-->
+
+
+ <script type="text/javascript">
+    var row;
+    var items;
+    var carbs = 8;
+    var proteins = 6;
+    var fats = 2;
+    $(document).ready(function(){
+      var breakfastNum = 2;
+       var lunchNum = 2;
+       var dinnerNum = 2;
+       var totalCarbs =0.0;
+       var totalFats =0.0;
+       var totalProteins =0.0;
+       var totalCalories =0;
+       var nutrition_original = nutritionInfoObject;
+       var flag=0;
+      carbs = 8;
+      proteins = 6;
+      fats = 2;
+      $(".livepreview").livePreview({trigger: 'hover',
+                        viewWidth: 300,  
+                        viewHeight: 200,  
+                        targetWidth: 1000,  
+                        targetHeight: 800,  
+                        scale: '0.5', 
+                        offset: 50,
+                        position: 'left'});
+       $( "tbody.connectedSortable" )
+        .sortable({
+            items: "> tr:not(.head)",
+            appendTo: "tbody",
+            helper:"clone",
+            connectWith: ".connectedSortable",
+            zIndex: 999990,
+            revert : true,
+            start: function(event, ui){ 
+              $(ui.item).show();
+              if(ui.item.parent().hasClass('data-all')){
+                flag=1;
+              }
+             },
+            stop: function(event,ui){ 
+              //  debugger;
+              if(flag==1){
+              var i = ui.item.data('idx');
+              nutritionInfoObject = nutrition_original;
+              // console.log(ui.item.data('idx'));
+             var carbs = nutritionInfoObject.nutrition[i].carbs;
+             var fats = nutritionInfoObject.nutrition[i].fats;
+             var proteins = nutritionInfoObject.nutrition[i].protein;
+             var calories = nutritionInfoObject.nutrition[i].calories;
+             carbs = parseFloat(carbs);
+             fats = parseFloat(fats);
+             proteins = parseFloat(proteins);
+             calories = parseFloat(calories);
+             chart.dataProvider[0].column = (parseFloat(chart.dataProvider[0].column)+ carbs).toFixed(2);
+              chart.dataProvider[1].column = (parseFloat(chart.dataProvider[1].column)+ proteins).toFixed(2);
+              chart.dataProvider[2].column = (parseFloat(chart.dataProvider[2].column)+ fats).toFixed(2);
+              totalCarbs=parseFloat(totalCarbs) + carbs;
+              totalFats=parseFloat(totalFats) +fats;
+              totalProteins=parseFloat(totalProteins) +proteins;
+              totalCalories=parseFloat(totalCalories) +calories;
+             chart.validateData();
+             $('#carbs').html((totalCarbs).toFixed(2)+'g');
+             $('#fats').html((totalFats).toFixed(2)+'g');
+             $('#proteins').html((totalProteins).toFixed(2)+'g');
+             $('#tdCalories').html((totalCalories).toFixed(2));
+                f=0;
+              }
+             },
+        })
+        .disableSelection();
+
+        var $tbody = $('.data-all');
+          row = [];
+        //  items = [ "Apples",
+        //             "Broccoli",
+        //             "Chicken",
+        //             "Duck",
+        //             "Eggs",
+        //             "Fish",
+        //             "Granola",
+        //             "Hash Browns"];
+        // for(var i=0;i<8;i++){
+        //   row.push('<tr><td>Item image1</td> <td>'+items[i]+'</td><td>1 Serving</td> <td><div class="favorite_food" data-original-title="" title=""></div></td> <td><button><span class="glyphicon glyphicon-remove"></span></button></td></tr>');
+        // }
+        var recepies = [];
+         for(var i=0;i< 30;i++){
+          var recepie = jsonObject.recipes[i];
+          recepie.nutrition = nutritionInfoObject.nutrition[i];
+          recepies.push(recepie);
+         }
+         $tbody.empty();
+        for(var i=0;i< 30;i++){
+         var $tr = "<tr class=\"food\" data-idx=\""+i+"\"> <td><img src=\""+recepies[i].image_url+"\" class=\"food_image\"></td> <td>"+recepies[i].title+"</td> <td>1 Serving</td> <td> <div class=\"favorite_food\" > </div> </td> <td><button><span class=\"glyphicon glyphicon-remove\"></span></button></td> </tr>";
+         row.push($tr);
+         $tbody.append($tr);
+       }
+        
+
+        $('tbody').on('click','.glyphicon',function(){
+           var i = $(this).parents('tr').first().data('idx');
+           nutritionInfoObject = nutrition_original;
+           var carbs = nutritionInfoObject.nutrition[i].carbs;
+           var fats = nutritionInfoObject.nutrition[i].fats;
+           var proteins = nutritionInfoObject.nutrition[i].protein;
+           var calories = nutritionInfoObject.nutrition[i].calories;
+           carbs = parseFloat(carbs);
+           fats = parseFloat(fats);
+           proteins = parseFloat(proteins);
+           calories = parseFloat(calories);
+           chart.dataProvider[0].column = (parseFloat(chart.dataProvider[0].column)- carbs).toFixed(2);
+            chart.dataProvider[1].column = (parseFloat(chart.dataProvider[1].column)- proteins).toFixed(2);
+            chart.dataProvider[2].column = (parseFloat(chart.dataProvider[2].column)- fats).toFixed(2);
+            totalCarbs-=carbs;
+            totalFats-=fats;
+            totalProteins-=proteins;
+            totalCalories-=calories;
+           chart.validateData();
+           $(this).parents('tr').first().remove(); 
+
+            $('#carbs').html((totalCarbs).toFixed(2)+'g');
+             $('#fats').html((totalFats).toFixed(2)+'g');
+             $('#proteins').html((totalProteins).toFixed(2)+'g');
+             $('#tdCalories').html((totalCalories).toFixed(2));
+        });
+
+        $('tbody').on('click','.favorite_food', function(){
+          if($(this).hasClass('active')){
+            $(this).removeClass('active');
+          }else{$(this).addClass('active');}
+        });
+        $('#btnAdd').on('click', function(){
+          var indices = [];
+          $.each( $('.connectedSortable').not('.data-all').children('tr.food'), function( key, value ) {
+            // console.log( value );
+            indices.push($(value).data('idx'));
+          });
+          localStorage.setItem("recepiesSelected", indices);
+          window.location.href = 'checkout.html';
+        });
+        $('#btnSubmit').click(function(){
+           totalCarbs =0.0;
+            totalFats =0;
+            totalProteins =0.0;
+            totalCalories =0.0;
+           var calories = $('#calories').val();
+           var meals = $('#second_num_meals').find(":selected").text();
+          //  if(meals<=3){
+          //   meals *=2;
+          // }else{
+          //   meals = 6+(meals-3);
+          // }
+           var recepies = [];
+           var indices = [];
+           // for(var i=0;i< meals;i++){
+           //  var recepie = jsonObject.recipes[i];
+           //  recepie.nutrition = nutritionInfoObject.nutrition[i];
+           //  recepies.push(recepie);
+           // }
+           if(calories<1800 && calories >=(1500)){
+              indices =[0,2,3,5];
+              breakfastNum=1;
+              lunchNum=1;
+              meals=4;
+           }
+           if(calories<=2100 && calories >=(1800)){
+              indices =[0,2,3,4,5];
+              breakfastNum=1;
+              lunchNum=2;
+              meals=5;
+           }
+           if(calories<=2500 && calories >(2100)){
+              indices =[0,1,2,3,4,5];
+              breakfastNum=2;
+              lunchNum=2;
+              if(meals==4){
+                breakfastNum=1;
+                dinnerNum=2;
+                lunchNum=2;
+                meals=6;
+              }else if(meals==5){
+                breakfastNum=1;
+                dinnerNum=1;
+                meals=6;
+              }
+           }
+
+           for(var i of indices){
+            var recepie = jsonObject.recipes[i];
+            recepie.nutrition = nutritionInfoObject.nutrition[i];
+            recepies.push(recepie);
+           }
+           
+            $($('tbody.connectedSortable')[1]).empty()
+           if(breakfastNum>0){
+            $head = "<tr class =\"head\"> <td><b><h3>Breakfast</h3><b></td> <td></td> <td></td> <td></td> <td></td> </tr>"; 
+            $($('tbody.connectedSortable')[1]).append($head);
+            for(var i=0;i<breakfastNum;i++){
+            var $tr = "<tr href=\"http://www.bing.com\" target=\"_blank\" class=\"livepreview food\" data-idx=\""+i+"\"> <td><img src=\""+recepies[i].image_url+"\" class=\"food_image\"></td> <td><a href=\""+recepies[i].source_url+"\">"+recepies[i].title+"</a></td> <td>1 Serving</td> <td> <div class=\"favorite_food\" > </div> </td> <td><button><span class=\"glyphicon glyphicon-remove\"></span></button></td> </tr>";
+
+              totalCarbs = parseFloat(totalCarbs)+ parseFloat((parseFloat(recepies[i].nutrition.carbs)).toFixed(2));
+              totalFats = parseFloat(totalFats)+parseFloat((parseFloat(recepies[i].nutrition.fats)).toFixed(2));
+              totalProteins =parseFloat(totalProteins)+ parseFloat((parseFloat(recepies[i].nutrition.protein)).toFixed(2));
+              totalCalories = parseFloat(totalCalories)+parseFloat((parseFloat(recepies[i].nutrition.calories)).toFixed(2));
+              totalCarbs=parseFloat(parseFloat(totalCarbs).toFixed(2));
+              totalCalories=parseFloat(parseFloat(totalCalories).toFixed(2));
+              totalFats=parseFloat(parseFloat(totalFats).toFixed(2));
+              totalProteins=parseFloat(parseFloat(totalProteins).toFixed(2));
+             $($('tbody.connectedSortable')[1]).append($tr);
+            }
+            
+           }
+           $($('tbody.connectedSortable')[2]).empty()
+           if(lunchNum>0){
+            $head = "<tr class =\"head\"> <td><b><h3>Lunch</h3><b></td> <td></td> <td></td> <td></td> <td></td> </tr>"; 
+            $($('tbody.connectedSortable')[2]).append($head);
+            for(var i=breakfastNum;i<breakfastNum+lunchNum;i++){
+            var $tr = "<tr class=\"food\" data-idx=\""+i+"\"> <td><img src=\""+recepies[i].image_url+"\" class=\"food_image\"></td> <td><a href=\""+recepies[i].source_url+"\">"+recepies[i].title+"</a></td> <td>1 Serving</td> <td> <div class=\"favorite_food\" > </div> </td> <td><button><span class=\"glyphicon glyphicon-remove\"></span></button></td> </tr>";
+
+              totalCarbs = parseFloat(totalCarbs)+ parseFloat((parseFloat(recepies[i].nutrition.carbs)).toFixed(2));
+              totalFats = parseFloat(totalFats)+parseFloat((parseFloat(recepies[i].nutrition.fats)).toFixed(2));
+              totalProteins =parseFloat(totalProteins)+ parseFloat((parseFloat(recepies[i].nutrition.protein)).toFixed(2));
+              totalCalories = parseFloat(totalCalories)+parseFloat((parseFloat(recepies[i].nutrition.calories)).toFixed(2));
+              totalCarbs=parseFloat(totalCarbs).toFixed(2);
+              totalCalories=parseFloat(totalCalories).toFixed(2);
+              totalFats=parseFloat(totalFats).toFixed(2);
+              totalProteins=parseFloat(totalProteins).toFixed(2);
+             $($('tbody.connectedSortable')[2]).append($tr);
+            }
+            
+           }
+           $($('tbody.connectedSortable')[3]).empty()
+           if(dinnerNum>0){
+            $head = "<tr class =\"head\"> <td><b><h3>Dinner</h3><b></td> <td></td> <td></td> <td></td> <td></td> </tr>"; 
+            $($('tbody.connectedSortable')[3]).append($head);
+            for(var i=breakfastNum+lunchNum;i<breakfastNum+lunchNum+dinnerNum;i++){
+            var $tr = "<tr class=\"food\" data-idx=\""+i+"\"> <td><img src=\""+recepies[i].image_url+"\" class=\"food_image\"></td> <td><a href=\""+recepies[i].source_url+"\">"+recepies[i].title+"</a></td> <td>1 Serving</td> <td> <div class=\"favorite_food\" > </div> </td> <td><button><span class=\"glyphicon glyphicon-remove\"></span></button></td> </tr>";
+
+              totalCarbs = parseFloat(totalCarbs)+ parseFloat((parseFloat(recepies[i].nutrition.carbs)).toFixed(2));
+              totalFats = parseFloat(totalFats)+parseFloat((parseFloat(recepies[i].nutrition.fats)).toFixed(2));
+              totalProteins =parseFloat(totalProteins)+ parseFloat((parseFloat(recepies[i].nutrition.protein)).toFixed(2));
+              totalCalories = parseFloat(totalCalories)+parseFloat((parseFloat(recepies[i].nutrition.calories)).toFixed(2));
+              totalCarbs=parseFloat(totalCarbs).toFixed(2);
+              totalCalories=parseFloat(totalCalories).toFixed(2);
+              totalFats=parseFloat(totalFats).toFixed(2);
+              totalProteins=parseFloat(totalProteins).toFixed(2);
+             $($('tbody.connectedSortable')[3]).append($tr);
+            }
+            
+           }
+           $($('tbody.connectedSortable')[4]).empty()
+           if(meals>(breakfastNum+lunchNum+dinnerNum)){
+            $head = "<tr class =\"head\"> <td><b><h3>Snack</h3><b></td> <td></td> <td></td> <td></td> <td></td> </tr>"; 
+            $($('tbody.connectedSortable')[4]).append($head);
+            for(var i=breakfastNum+lunchNum+dinnerNum;i<breakfastNum+lunchNum+dinnerNum+1;i++){
+            var $tr = "<tr class=\"food\" data-idx=\""+i+"\"> <td><img src=\""+recepies[i].image_url+"\" class=\"food_image\"></td> <td><a href=\""+recepies[i].source_url+"\">"+recepies[i].title+"</a></td> <td>1 Serving</td> <td> <div class=\"favorite_food\" > </div> </td> <td><button><span class=\"glyphicon glyphicon-remove\"></span></button></td> </tr>";
+
+              totalCarbs = parseFloat(totalCarbs)+ parseFloat((parseFloat(recepies[i].nutrition.carbs)).toFixed(2));
+              totalFats = parseFloat(totalFats)+parseFloat((parseFloat(recepies[i].nutrition.fats)).toFixed(2));
+              totalProteins =parseFloat(totalProteins)+ parseFloat((parseFloat(recepies[i].nutrition.protein)).toFixed(2));
+              totalCalories = parseFloat(totalCalories)+parseFloat((parseFloat(recepies[i].nutrition.calories)).toFixed(2));
+              totalCarbs=parseFloat(totalCarbs).toFixed(2);
+              totalCalories=parseFloat(totalCalories).toFixed(2);
+              totalFats=parseFloat(totalFats).toFixed(2);
+              totalProteins=parseFloat(totalProteins).toFixed(2);
+             $($('tbody.connectedSortable')[4]).append($tr);
+            }
+           }
+           $($('tbody.connectedSortable')[5]).empty()
+           if(meals>(breakfastNum+lunchNum+dinnerNum+1)){
+            $head = "<tr class =\"head\"> <td><b><h3>Snack</h3><b></td> <td></td> <td></td> <td></td> <td></td> </tr>"; 
+            $($('tbody.connectedSortable')[5]).append($head);
+            for(var i=breakfastNum+lunchNum+dinnerNum+1;i<breakfastNum+lunchNum+dinnerNum+2;i++){
+            var $tr = "<tr class=\"food\" data-idx=\""+i+"\"> <td><img src=\""+recepies[i].image_url+"\" class=\"food_image\"></td> <td><a href=\""+recepies[i].source_url+"\">"+recepies[i].title+"</a></td> <td>1 Serving</td> <td> <div class=\"favorite_food\" > </div> </td> <td><button><span class=\"glyphicon glyphicon-remove\"></span></button></td> </tr>";
+
+              totalCarbs = parseFloat(totalCarbs)+ parseFloat((parseFloat(recepies[i].nutrition.carbs)).toFixed(2));
+              totalFats = parseFloat(totalFats)+parseFloat((parseFloat(recepies[i].nutrition.fats)).toFixed(2));
+              totalProteins =parseFloat(totalProteins)+ parseFloat((parseFloat(recepies[i].nutrition.protein)).toFixed(2));
+              totalCalories = parseFloat(totalCalories)+parseFloat((parseFloat(recepies[i].nutrition.calories)).toFixed(2));
+              totalCarbs=parseFloat(totalCarbs).toFixed(2);
+              totalCalories=parseFloat(totalCalories).toFixed(2);
+              totalFats=parseFloat(totalFats).toFixed(2);
+              totalProteins=parseFloat(totalProteins).toFixed(2);
+             $($('tbody.connectedSortable')[5]).append($tr);
+            }
+           }
+            chart.dataProvider[0].column = totalCarbs;
+            chart.dataProvider[1].column = totalProteins;
+            chart.dataProvider[2].column = totalFats;
+            chart.validateData();
+
+            $('#carbs').html(parseFloat(totalCarbs).toFixed(2)+'g');
+             $('#fats').html(parseFloat(totalFats).toFixed(2)+'g');
+             $('#proteins').html(parseFloat(totalProteins).toFixed(2)+'g');
+             $('#tdCalories').html(parseFloat(totalCalories).toFixed(2));
+
+        });
+      //on load generate
+      $( "#btnSubmit" ).trigger( "click" );
+    });
+
+    var fun = function(){
+      var row2 = row.filter(function(item){
+                return item.toLowerCase().search(
+                                event.target.value.toLowerCase()) !== -1;
+            });
+      //console.log(row);
+      var $tbody = $('.data-all');
+      $tbody.empty();
+      $tbody.append(row2);
+    }
+
+    var chart = AmCharts.makeChart("chartdiv",
+        {
+          "type": "pie",
+          "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
+          "titleField": "category",
+          "valueField": "column",
+          "allLabels": [],
+          "balloon": {},
+          "legend": {
+            "enabled": true,
+            "align": "center",
+            "markerType": "circle"
+          },
+          "titles": [],
+          "dataProvider": [
+            {
+              "category": "Carbs",
+              "column": carbs
+            },
+            {
+              "category": "Proteins",
+              "column": proteins
+            },
+            {
+              "category": "Fats",
+              "column": fats
+            }
+          ]
+        }
+      );
+
+
+</script>
+  
+
+  <script type="text/javascript">
+    // $(document).ready(function(){
+    //    $( "tbody.connectedSortable" )
+    //     .sortable({
+    //         connectWith: ".connectedSortable",
+    //         items: "> tr:not(.head)",
+    //         appendTo: "tbody",
+    //         helper:"clone",
+    //         zIndex: 999990,
+    //         start: function(){  },
+    //         stop: function(){  }
+    //     })
+    //     .disableSelection()
+    // ;
+    // });
+    // $(function() {
+    // $(".food").draggable({ 
+    //     revert: 'invalid', 
+    //     scroll: false,
+    //     containment: '#dropableArea',
+    //     helper: 'clone',
+    //     appendTo: 'tbody',
+    //     start : function() {
+    //     this.style.display="none";
+    //     },
+    //     stop: function() {
+    //     this.style.display="";
+    //     }
+    // });
+    // $(".tbody").droppable({
+    //     accept: '.food',
+    //     hoverClass: 'tf_dropBox_hover',
+    //     activeClass: 'tf_dropBox_active',
+    //     drop: function(event, ui) {
+    //         GLOBAL_ary_tf_tags.push(ui.draggable.html());
+    //         tagFun_reload();
+    //     }
+    // });
+// }); 
+function findCalories(){
+        $("#calories").val(2000);
+        $('#myModal').modal('hide');
+      }
+  </script>
+
+</head>
+<body>
+  <div id="myModal" class="modal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Nutrition Calculator</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-horizontal" id="calculator_form">
+                  <fieldset>
+
+                      <div class="form-group">
+                          <label for="current-preset-diet" class="col-sm-4 control-label">Current diet type</label>
+
+                          <div class="col-sm-8" style="margin-top: 8px" id="current-preset-diet">
+                              <span> vegetarian </span>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="goal-radio" class="col-sm-4 control-label">I want to</label>
+
+                          <div class="col-sm-8" data-editors="goal" id="goal-radio"><div id="c327_goal" class="btn-group" name="goal" data-toggle="buttons"><label for="c327_goal-0" class="btn btn-default active"><input type="radio" name="goal" value="L" id="c327_goal-0" checked="">Lose weight</label><label for="c327_goal-1" class="btn btn-default "><input type="radio" name="goal" value="M" id="c327_goal-1">Maintain health</label><label for="c327_goal-2" class="btn btn-default "><input type="radio" name="goal" value="G" id="c327_goal-2">Gain weight</label></div></div>
+                      </div>
+
+
+                      <div class="form-group">
+                          <label for="gender-radio" class="col-sm-4 control-label">I am</label>
+
+                          <div class="col-sm-8" data-editors="gender" id="units-radio"><div id="c327_gender" class="btn-group" name="gender" data-toggle="buttons"><label for="c327_gender-0" class="btn btn-default active"><input type="radio" name="gender" value="M" id="c327_gender-0" checked="">Male</label><label for="c327_gender-1" class="btn btn-default "><input type="radio" name="gender" value="F" id="c327_gender-1">Female</label></div></div>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="height-inputs" class="col-sm-4 control-label">Height</label>
+
+                          <div class="inline_block col-sm-8" id="height-inputs">
+                              <input name="height_primary" class="form-control inline_block small_calc_input" type="text" style="display: none;">
+                              <span class="metric_inputs" style="display: inline;"> cm </span>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="weight-input" class="col-sm-4 control-label">Weight</label>
+
+                          <div class="inline_block col-sm-8" id="weight-input">
+                              <input name="weight" class="form-control inline_block small_calc_input" type="text">
+                              <span class="metric_inputs" style="display: inline;"> kgs </span>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="age-input" class="col-sm-4 control-label">Age</label>
+
+                          <div class="col-sm-8" id="age-input">
+                              <div class="inline_block small_calc_input" data-editors="age"><input id="c327_age" class="form-control" name="age" type="number" step="any" min="0"></div>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="bodyfat-radio" class="col-sm-4 control-label">Bodyfat</label>
+
+                          <div class="col-sm-8">
+                              <div data-editors="bodyfat" id="bodyfat-radio" class="inline_block"><div id="c327_bodyfat" class="btn-group" name="bodyfat" data-toggle="buttons"><label for="c327_bodyfat-0" class="btn btn-default "><input type="radio" name="bodyfat" value="10" id="c327_bodyfat-0">Low</label><label for="c327_bodyfat-1" class="btn btn-default active"><input type="radio" name="bodyfat" value="20" id="c327_bodyfat-1" checked="">Medium</label><label for="c327_bodyfat-2" class="btn btn-default "><input type="radio" name="bodyfat" value="30" id="c327_bodyfat-2">High</label></div></div>
+
+                              <span class="bfat_help_tooltip inline_block" data-original-title="" title="">
+                                  <img src="images/small_question.png" alt="bodyfat tooltip">
+                              </span>
+
+                              <div class="female_bfat_percent" style="display: none;">
+                                  <div class="bfat_percent">&lt;22%</div>
+                                  <div class="bfat_percent">22%-35%</div>
+                                  <div class="bfat_percent">&gt;35%</div>
+                              </div>
+                              <div class="male_bfat_percent" style="display: block;">
+                                  <div class="bfat_percent">&lt;14%</div>
+                                  <div class="bfat_percent">14%-22%</div>
+                                  <div class="bfat_percent">&gt;22%</div>
+                              </div>
+
+
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="activity_level_dropdown" class="col-sm-4 control-label">Activity level</label>
+
+                          <div class="col-sm-4">
+                              <div class="inline_block" data-editors="activity_level" id="activity_level_dropdown"><select id="c327_activity_level" class="form-control" name="activity_level"><option value="1.2">Sedentary</option><option value="1.375">Lightly Active</option><option selected="" value="1.55">Moderately Active</option><option value="1.725">Very Active</option><option value="1.9">Extremely Active</option></select></div>
+                              <div class="activity_tooltip inline_block" data-original-title="" title="">
+                                  <img src="images/small_question.png" alt="activity tooltip">
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="weight_goal_calculator_form">
+
+                          <hr>
+                          <div class="form-group">
+                              <label for="weight_field" style="font-weight: normal" class="col-xs-4 control-label">Enter your
+                                  weight
+                                  goal (optional)</label>
+
+                              <div class="col-xs-8">
+                                  <div class="weight_input_field" data-editors="weight_goal"><input id="c327_weight_goal" class="form-control" name="weight_goal" type="number" step="any" min="0"></div>
+
+                                  <div class="weight_units">kgs</div>
+                              </div>
+
+                          </div>
+
+                          <div class="form-group">
+                              <label for="weight_field" style="font-weight: normal" class="col-xs-4 control-label">Enter your
+                                  weight
+                                  goal date (optional)</label>
+
+                              <div class="col-xs-8 padding-top7" data-editors="weight_goal_date"><div id="c327_weight_goal_date" name="weight_goal_date">      <select data-type="date"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select>      <select data-type="month"><option value="0">January</option><option value="1">February</option><option value="2">March</option><option value="3">April</option><option value="4">May</option><option value="5">June</option><option value="6">July</option><option value="7">August</option><option value="8">September</option><option value="9">October</option><option value="10">November</option><option value="11">December</option></select>      <select data-type="year"><option value="2016">2016</option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option></select>    <input type="hidden" name="weight_goal_date" value="2016-12-01"></div></div>
+                          </div>
+
+                          <div class="row">
+                              <div class="col-xs-4 control-label" style="font-weight: normal; padding-top: 0px">or</div>
+                          </div>
+
+                          <div class="form-group">
+                              <label for="weight_field" style="font-weight: normal" class="col-xs-4 control-label">Enter your
+                                  desired weekly weight change</label>
+
+                              <div class="col-xs-8">
+                                  <div class="weight_input_field" data-editors="weight_goal_weekly_rate"><input id="c327_weight_goal_weekly_rate" class="form-control" name="weight_goal_weekly_rate" step="0.1" type="number"></div>
+
+                                  <div class="weight_units">kgs</div>
+                              </div>
+                          </div>
+
+                      </div>
+
+                      <hr>
+
+                      <div class="col-xs-offset-4" style="padding-bottom: 10px; padding-left:15px">
+                          <button class="btn btn-large btn-primary" id="calculate_button" onclick="findCalories()">Calculate</button>
+                      </div>
+
+                  </fieldset>
+              </div>        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+  <section id="login-section" style="padding-botton: 0px;">
+     <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Alfred</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="index.html">Home</a></li>
+      <li><a href="#">About Us</a></li>
+    </ul>
+  </div>
+</nav>
+  <div class="container-fluid">
+    <div class="page-header">
+      <div class="image_shading">
+          <h1 class=" text-center">Put your diet on autopilot</h1>
+          <h3 class=" text-center">We will automatically creates meal plans that meet your diet goals.<br/>
+                                              It can be personalized for your food preferences, budget,<br/> and schedule.
+                                              Then, once a week, we give you a grocery list<br/> with everything you need.<br/><br/>
+                                              Eating smart has never been this easy.</h3>
+    </div></div>
+    <div class="row">
+      <div class="dropableArea">
+      <div class="generatorBox">
+        <span>I want to eat </span>
+        <span><input style="width: 60px;"id="calories" type="text" value="2000"/> </span>
+        <span>calories in </span>
+        <span><select style="width: 60px;" name="nummeals" class="lg  num_meals_selector" id="second_num_meals">
+                      <option value="1">1</option><option value="2">2</option><option selected="" value="3">3</option><option value="4">4</option><option value="5">5</option><option  value="6">6</option>
+                  </select> </span>
+        <span>meals.</span>
+        <input id="btnSubmit" type="submit" value="Generate" class="btn btn-lg btn-success "/>
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Nutrition Calculator</button>
+
+      </div>
+      <div class="col-lg-2 col-md-3 col-xs-3">
+        <!-- <div class="col-lg-6 col-lg-offset-2 col-md-8 col-md-offset-2" id="mount-point"> -->
+        <div>
+            <!-- <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> -->
+            <h3>Search for food</h3>
+            <input  type="text" placeholder="Search" class="form-control search" onchange="fun()"  onkeypress = "this.onchange();"
+             onpaste    = "this.onchange();"
+             oninput    = "this.onchange();"/>
+            <table class="table table-responsive">
+              <tbody class="connectedSortable data-all"> 
+                <tr class="food">
+                  <td>Item image1</td>
+                  <td>Item name extended</td>
+                  <td>1 Serving</td>
+                  <td>Add to favourites</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-8 col-xs-8 col-lg-offset-1">
+        <!-- <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2"> -->
+        <div>
+          
+          <!-- <a href="http://www.bing.com" target="_blank" class="livepreview">Hover over to preview, click to link!/</a> -->
+
+          <div class="connectedSortable">
+            <table class="table hover">
+              <tbody class="connectedSortable"> 
+                
+              </tbody>
+            </table>
+              <tr><td></td></tr>
+              <table class="table">
+                <tbody class="connectedSortable">
+              
+            </tbody></table>
+            <table class="table">
+              <tbody class="connectedSortable">
+              
+            </tbody>
+            </table>
+            <table class="table">
+              <tbody class="connectedSortable">
+              </tbody>
+            </table>
+            <table class="table">
+              <tbody class="connectedSortable">
+              </tbody>
+            </table>
+          </div>
+          <input id="btnAdd" type="submit" value="Add to Cart" class="btn btn-lg btn-success btn-block"/>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <!-- <div class="col-lg-6 col-lg-offset-2 col-md-8 col-md-offset-2" id="mount-point"> -->
+        <div class="chartDiv">
+            <!-- <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> -->
+            <div id="chartdiv" style="width: 600px; height: 400px; background-color: #FFFFFF; margi" ></div>
+            <table class ="col-lg-offset-4 jumbotron nutrientDetails">
+              <tbody style="padding:10px;">
+                <tr>
+                  <td colspan ='2'>Cumulative stats:</td>
+                </tr>
+                <tr>
+                  <td id="carbs">144g </td>
+                  <td>Carbs</td>
+                </tr>
+                <tr>
+                  <td id= "fats">69.7g  </td>
+                  <td>Fat</td>
+                </tr>
+                <tr>
+                  <td id="proteins">106.3g </td>
+                  <td>Protein</td>
+                </tr>
+                <tr>
+                  <td id="tdCalories">1578  </td>
+                  <td>Calories</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+      </div>
+        <!-- </form> -->
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+
+<style type="text/css">
+    table tbody tr:hover {
+    cursor: move;
+    }
+
+    small-table {
+      max-width: 20px;
+    }
+
+    .favorite_food {
+    background: url('images/addFavorite.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 20px;
+    display: inline-block;
+    vertical-align: top;
+    height: 18px;
+    margin-top: 2px;
+    margin-right: 5px;
+    margin-left: 50px;
+    cursor: pointer;
+    }
+    .favorite_food.active {
+        background: url('images/addFavoriteActive.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+    .page-header{
+      background-image: url('images/pasta_dish_2.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center 85%;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.25);
+    }
+    .image_shading {
+      background-color: rgba(0, 0, 0, 0.25);
+      position: relative;
+      height: 260px;
+    }
+    .food_image {
+    /* width: 100%; */
+    max-width: 100%;
+    /* height: 25px; */
+    opacity: 1;
+    max-height: 100px;
+    }
+  </style>
+
+</html>
