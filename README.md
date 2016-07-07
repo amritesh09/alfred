@@ -6,7 +6,7 @@ and your meal plan will be generated autoatically.
 You can add and remove more recepies by drag and drop from the menu.
 The nutrition chart will be updated automatically along with the total calories.
 
-You can place an order directly from your meal plan or you can subscribe to weekly or monthly plan.
+You can place an order directly from your meal plan or you can subscribe to weekly or monthly plan. 
 
 
 
